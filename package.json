@@ -1,0 +1,19 @@
+{
+  "name": "pm_21_23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmytroPempus/lab_1_web.git"
+  },
+  "author": "Dmytro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmytroPempus/lab_1_web/issues"
+  },
+  "homepage": "https://github.com/DmytroPempus/lab_1_web#readme"
+}

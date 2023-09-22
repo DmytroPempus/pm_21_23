@@ -1,0 +1,74 @@
+*{
+  margin:0;
+  padding:0;
+  border:none;
+  box-sizing:border-box;
+}
+body{
+
+}
+
+.header{
+  background-color: #1f232c;
+  padding: 0;
+
+}
+.container{
+  width: 1366px;
+  margin:0;
+  padding:0;
+  border:none;
+
+}
+.nav-search{
+  padding-right: 24px;
+}
+.search {
+  margin-top:11px;
+  background-color:#31343d;
+  width: 466px;
+  height: 41px;
+  border-radius: 5px;
+  padding-right: 100px;
+
+}
+
+.title{
+  color:white;
+  padding-top:20px;
+  padding-left:27px;
+  padding-right:170px ;
+  font-size: 26px;
+}
+.bell {
+  margin-top:11px;
+  padding-right: 25px;
+}
+.mail{
+  margin-top: 11px;
+  padding-right:311px ;
+}
+.avatar{
+  margin-top: 11px;
+}
+
+.menu
+{
+  width: 400px;
+  height: 1300px;
+
+  background-color:#232730;
+}
+.menu-name{
+  margin-top: 300px;
+  color: white;
+  text-decoration: none;
+}
+.left-menu-imagine{
+  float: right;
+  padding-right: ;
+}
+.right-shape{
+  float: right;
+  padding-right:53px;
+}
