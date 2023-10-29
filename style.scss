@@ -1,24 +1,25 @@
 *{
   margin:0;
   padding:0;
-  border:none;
   box-sizing:border-box;
 }
 
 body{
-background: #f6f6f6;
+  background: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-
+  flex-direction: column;
 }
 
 .header {
   background-color: #1f232c;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
-  z-index: 999;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 .navbar-header {
   display: flex;
@@ -148,10 +149,12 @@ padding-left: 1.8%;
 .menu
 {
   width: 322px;
-  height: 1000px;
-  background-color:#31343d;
+  height: 100%;
+  background-color:#232730;
   margin-top: 55px;
-
+  position: absolute;
+  left: 0;
+  z-index: 1;
 }
 .menu-item
 {
@@ -227,23 +230,20 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,.bi-gear-f
 }
 
 
-.twitter-box
+.twitter-box,.sales-box,.visitors-box,.message-box
 {
   position: relative;
   display: flex;
-  width: 225px;
+  width: 285px;
   height: 111px;
   background-color:white;
-  margin-top: 88px;
-  margin-left: 33px;
-
+  margin-left: 5%;
 }
 
-.twitter-bird
+.twitter-bird,.dollar-top-box,.person-top-box,.message-top-box
 {
   position: relative;
   color:#f4f4f5;
-  background: #66b7f0;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -254,49 +254,93 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,.bi-gear-f
   margin-top: 26px;
   font-size: 30px;
 }
-
-.dollar-box
+.twitter-bird
 {
-  font-size: 50px;
   background: #66b7f0;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-
 }
 
-.circle-twitter{
+.dollar-top-box
+{
+  background: #a5c562;
+}
+
+.person-top-box
+{
+background: #ff503f;
+}
+
+.message-top-box
+{
+  background: #f5bb42;
+}
+
+.circle-twitter,.circle-sales,.circle-visitors,.circle-message
+{
   position: absolute;
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(60deg, #f5f5f5  65%, #d1e5f3 35%);
   left: 22%;
   top: 51%;
   transform: translate(-50%, -50%);
 }
 
-.twitter-text
+.circle-twitter
 {
-  padding-left: 30px;
-  padding-top: 30px;
+  background: linear-gradient(60deg, #f5f5f5  65%, #d1e5f3 35%);
+}
+.circle-sales
+{
+
+  background: linear-gradient(60deg, #f5f5f5  65%, #e2ead1 35%);
 }
 
-.twitter-number{
+.circle-visitors
+{
+  background: linear-gradient(60deg, #f5f5f5  65%, #f8d7d4 35%);
+}
+.circle-message
+{
+  background: linear-gradient(60deg, #f5f5f5  65%, #f6e7c8 35%);
+}
+
+.twitter-text,.sales-text,.visitors-text,.message-text
+{
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.twitter-number,.sales-number,.visitors-number,.message-number
+{
   font-size: 25px;
   font-weight:bold;
   margin: 0;
 }
 
-.twitter-description{
+.twitter-description,.sales-description,.visitors-description,.message-description{
  margin: 0;
  color: #979090
 }
 
-.top-boxes {
-
+.bi-currency-dollar
+{
+  color:white;
 }
 
+.top-boxes {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top:88px;
+  left:322px;
+}
+
+.main-container{
+  background: #66b7f0;
+  width: calc(100% - 322px);
+  height: 1000px;
+  margin-left:322px;
+}
 
 
 
