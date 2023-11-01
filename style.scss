@@ -5,11 +5,12 @@
 }
 
 body{
-  background: #f6f6f6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
+  position: relative;
+  height: 1500px;
 }
 
 .header {
@@ -75,7 +76,7 @@ body{
 
 .top-menu-bell
 {
-padding-left: 1.8%;
+  padding-left: 1.8%;
   position: relative;
 }
 .bi-bell-fill
@@ -149,7 +150,7 @@ padding-left: 1.8%;
 .menu
 {
   width: 322px;
-  height: 100%;
+  height: 1500px;
   background-color:#232730;
   margin-top: 55px;
   position: absolute;
@@ -205,7 +206,7 @@ padding-left: 1.8%;
   color:white;
   width: 100px;
 }
-i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,.bi-gear-fill,.bi-star-fill,.bi-link-45deg,.bi-share-fill,#env-left-menu,.bi-trophy-fill,.bi-power,.bi-caret-left-square-fill
+i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-menu,.bi-star-fill,.bi-link-45deg,.bi-share-fill,#env-left-menu,.bi-trophy-fill,.bi-power,.bi-caret-left-square-fill
 {
   color:#a3aab4;
   font-size: 24px;
@@ -230,17 +231,32 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,.bi-gear-f
 }
 
 
+
+
+
+
+
+
+.main-container{
+  padding:88px 31px;
+  background: #f6f6f6;
+  width: calc(100% - 322px);
+  height: 2000px;
+  margin-left:322px;
+
+}
+
 .twitter-box,.sales-box,.visitors-box,.message-box
 {
   position: relative;
   display: flex;
-  width: 285px;
-  height: 111px;
+  width: 22%;
+  height: 130px;
   background-color:white;
-  margin-left: 5%;
 }
 
-.twitter-bird,.dollar-top-box,.person-top-box,.message-top-box
+
+.twitter-top-box,.dollar-top-box,.person-top-box,.message-top-box
 {
   position: relative;
   color:#f4f4f5;
@@ -250,11 +266,11 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,.bi-gear-f
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
   margin-top: 26px;
   font-size: 30px;
+  bottom:13px;
 }
-.twitter-bird
+.twitter-top-box
 {
   background: #66b7f0;
 }
@@ -266,7 +282,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,.bi-gear-f
 
 .person-top-box
 {
-background: #ff503f;
+  background: #ff503f;
 }
 
 .message-top-box
@@ -276,9 +292,12 @@ background: #ff503f;
 
 .circle-twitter,.circle-sales,.circle-visitors,.circle-message
 {
-  position: absolute;
-  width: 72px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 72px;
+  width: 72px;
   border-radius: 50%;
   left: 22%;
   top: 51%;
@@ -318,8 +337,8 @@ background: #ff503f;
 }
 
 .twitter-description,.sales-description,.visitors-description,.message-description{
- margin: 0;
- color: #979090
+  margin: 0;
+  color: #979090
 }
 
 .bi-currency-dollar
@@ -328,19 +347,202 @@ background: #ff503f;
 }
 
 .top-boxes {
+  position: relative;
   display: flex;
-  position: absolute;
   align-items: center;
-  top:88px;
-  left:322px;
+  justify-content: space-between;
 }
 
-.main-container{
-  background: #66b7f0;
-  width: calc(100% - 322px);
-  height: 1000px;
-  margin-left:322px;
+
+
+
+
+.middle-top-boxes
+{
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  height: 500px;
+
+  .site-statistic
+  {
+    width: 65%;
+    height: 100%;
+    background: white;
+
+
+    .site-statistic-header
+    {
+      width:100%;
+      height: 48px;
+      background: #fafafa;
+      color: #a2a0a0;
+      font-size: 22px;
+      padding-left: 10px;
+      padding-top: 5px;
+
+
+      #setting-site-statistic
+      {
+        font-size: 25px;
+      }
+      .setting-site-statistic
+      {
+        display: flex;
+        position: relative;
+        justify-content: right;
+        padding-right:30px ;
+        bottom: 50px;
+      }
+
+    }
+
+    .site-statistic-graph
+    {
+      width:100%;
+      height:402px;
+      background: #ffffff;
+    }
+  }
+
+  .yearly-statistic
+  {
+    position: relative;
+    margin-left: 38px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    height: 100%;
+
+    .sales-graph
+    {
+      background: #8bc152;
+      color: #fafcf7;
+      font-size: 20px;
+      width: 100%;
+      height: 42%;
+      padding:13px;
+    }
+    .yearly-numbers
+    {
+      width: 100%;
+      height: 58%;
+      padding-left:20px ;
+      padding-right:30px ;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+
+      .yearly-text
+      {
+        margin: 0;
+        color:#bbbaba;
+      }
+      .statistic-line {
+        background: #eae9e9;
+        border-radius: 20px;
+      }
+
+
+      .yearly-sales
+      {
+        .yearly-sales-number
+        {
+          margin: 0;
+          color:#f6bb42;
+          font-size:20px ;
+        }
+        .sales-progress
+        {
+          height: 10px;
+          width: 65%;
+          background: #f7c055;
+          border-radius: 20px;
+        }
+      }
+      .yearly-visitor
+      {
+        .yearly-visitor-number
+        {
+          margin: 0;
+          color:#8cc152;
+          font-size:20px ;
+        }
+        .visitors-progress
+        {
+          height: 10px;
+          width: 50%;
+          background: #8cc152;
+          border-radius: 20px;
+
+        }
+      }
+      .yearly-customers
+      {
+        .yearly-customers-number
+        {
+          margin: 0;
+          color:#73cba7;
+          font-size:20px ;
+        }
+        .customers-progress
+        {
+          height: 10px;
+          width: 85%;
+          background: #73cba7;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
 }
 
+.middle-bottom-boxes
+{
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  height: 700px;
+  background: #e52435;
+
+  .left-boxes
+  {
+    width: 60%;
+    height: 100%;
+    background: #c96d23;
+
+    .todo-list
+    {
+      width: 100%;
+      height: 400px;
+      background: #ffffff;
+      font-size: 20px;
+
+      .todo-list-header
+      {
+
+        display: flex;
+        width: 100%;
+        height: 60px;
+        padding-left: 32px;
+        background: #1fb5ab;
+        color:white;
+        align-items: center;
+
+        .plus{
+          font-size: 30px;
+          font-weight: bold;
+          display: flex;
+          justify-content: flex-end;
+          float: right;
+        }
+
+
+      }
+    }
+  }
+}
 
 

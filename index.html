@@ -77,9 +77,9 @@
             <i class="bi bi-chevron-right"></i>
         </div>
         <div class="menu-item">
-            <i class="bi bi-gear-fill"></i>
+            <i class="bi bi-gear-fill" id="setting-menu"></i>
             <a class="menu-name" href="#">Setting</a>
-            <i class="bi bi-chevron-right"></i>
+            <i class="bi bi-chevron-right" ></i>
         </div>
         <div class="menu-item">
             <i class="bi bi-star-fill"></i>
@@ -118,12 +118,15 @@
         </div>
     </div>
 
+
+
 <main>
     <div class="main-container ">
         <div class="top-boxes">
             <div class="twitter-box">
-                <span class="circle-twitter"></span>
-                <span class="twitter-bird"><i class="bi bi-twitter"></i></span>
+                <div class="circle-twitter">
+                    <span class="twitter-top-box"><i class="bi bi-twitter"></i></span>
+                </div>
                 <div class="twitter-text">
                     <p class="twitter-number">400</p>
                     <p class="twitter-description">Mentioned</p>
@@ -131,8 +134,9 @@
             </div>
 
             <div class="sales-box">
-                <span class="circle-sales"></span>
-                <span class="dollar-top-box"><i class="bi bi-currency-dollar"></i></span>
+                <div class="circle-sales">
+                    <span class="dollar-top-box"><i class="bi bi-currency-dollar"></i></span>
+                </div>
                 <div class="sales-text">
                     <p class="sales-number">13140 $</p>
                     <p class="sales-description">Today Sales</p>
@@ -140,8 +144,9 @@
             </div>
 
             <div class="visitors-box">
-                <span class="circle-visitors"></span>
-                <span class="person-top-box"><i class="bi bi-person-fill"></i></span>
+                <div class="circle-visitors">
+                    <span class="person-top-box"><i class="bi bi-person-fill"></i></span>
+                </div>
                 <div class="visitors-text">
                     <p class="visitors-number">9001</p>
                     <p class="visitors-description">Today Visitors</p>
@@ -149,11 +154,70 @@
             </div>
 
             <div class="message-box">
-                <span class="circle-message"></span>
-                <span class="message-top-box"><i class="bi bi-envelope-fill" id="env-top-box"></i></span>
+                <div class="circle-message">
+                    <span class="message-top-box"><i class="bi bi-envelope-fill" id="env-top-box"></i></span>
+                </div>
                 <div class="message-text">
                     <p class="message-number">350</p>
                     <p class="message-description">New messages</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="middle-top-boxes">
+            <div class="site-statistic">
+                <div class="site-statistic-header">
+                    <p>SITE STATISTIC</p>
+                    <div class="setting-site-statistic">
+                        <i class="bi bi-gear-fill" id="setting-site-statistic"></i>
+                    </div>
+
+                </div>
+
+                <div class="site-statistic-graph">
+
+                </div>
+            </div>
+
+            <div class="yearly-statistic">
+                <div class="sales-graph">
+                    <p>Yearly Sales</p>
+                </div>
+                <div class="yearly-numbers">
+                    <div class="yearly-sales">
+                        <p class="yearly-sales-number">563,030 $</p>
+                        <p class="yearly-text">Yearly Sales</p>
+                        <div class="statistic-line">
+                            <div class="sales-progress"></div>
+                        </div>
+                    </div>
+                    <div class="yearly-visitor">
+                        <p class="yearly-visitor-number">4204284</p>
+                        <p class="yearly-text">Yearly Visitor</p>
+                        <div class="statistic-line">
+                            <div class="visitors-progress"></div>
+                        </div>
+                    </div>
+                    <div class="yearly-customers">
+                        <p class="yearly-customers-number">42000</p>
+                        <p class="yearly-text">Yearly Customers</p>
+                        <div class="statistic-line">
+                            <div class="customers-progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="middle-bottom-boxes">
+            <div class="left-boxes">
+                <div class="todo-list">
+                    <div class="todo-list-header">
+                        <p>ToDo List</p>
+                      <div class="plus"><i class="bi bi-plus-lg"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
