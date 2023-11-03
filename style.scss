@@ -359,14 +359,17 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
 .middle-top-boxes
 {
+  position: relative;
   display: flex;
+  justify-content: space-between;
+  align-content: space-between;
   margin-top: 40px;
   width: 100%;
-  height: 500px;
+  height: 420px;
 
   .site-statistic
   {
-    width: 65%;
+    width: 61%;
     height: 100%;
     background: white;
 
@@ -400,8 +403,8 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     .site-statistic-graph
     {
       width:100%;
-      height:402px;
-      background: #ffffff;
+      height:calc(100% - 48px);
+      background: #8bc152;
     }
   }
 
@@ -412,7 +415,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 32%;
+    width: 33%;
     height: 100%;
 
     .sales-graph
@@ -433,6 +436,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      padding-bottom: 15px;
 
 
       .yearly-text
@@ -502,44 +506,358 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 .middle-bottom-boxes
 {
   display: flex;
+  justify-content: space-between;
   margin-top: 40px;
   width: 100%;
-  height: 700px;
-  background: #e52435;
+  height: 500px;
 
   .left-boxes
   {
-    width: 60%;
+    width: 61%;
     height: 100%;
-    background: #c96d23;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+
 
     .todo-list
     {
       width: 100%;
-      height: 400px;
+      height: 66.7%;
       background: #ffffff;
       font-size: 20px;
 
+
       .todo-list-header
       {
-
         display: flex;
         width: 100%;
-        height: 60px;
-        padding-left: 32px;
+        height: 55px;
+        padding-left: 20px;
         background: #1fb5ab;
         color:white;
         align-items: center;
 
+        .todo-list-text
+        {
+          width: 100%;
+          margin: 0;
+          font-size: 25px;
+        }
         .plus{
-          font-size: 30px;
+          width: 30%;
+          font-size: 35px;
           font-weight: bold;
           display: flex;
           justify-content: flex-end;
-          float: right;
+          padding-right: 20px;
+        }
+      }
+
+      .todo-list-body
+      {
+        width: 100%;
+        height: calc(100% - 55px);
+        background: #ffffff;
+        padding-right:20px;
+        padding-left: 25px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+        .todo-list-tasks
+        {
+          width: 100%;
+          height: 50px;
+          background: #f6f6f6;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+
+
+
+          .todo-list-tasks-text
+          {
+            width: 100%;
+            margin: 0;
+            color: #a7a2a2;
+            padding-left: 10px;
+            font-size: 15px;
+          }
+
+          .bi-three-dots-vertical
+          {
+            width: 5%;
+            color: #cbc8c8;
+          }
+
+          .bi-check2
+          {
+            width: 5%;
+            color: #d5d2d2;
+            font-size: 30px;
+            display: flex;
+          }
+          .bi-x
+          {
+            width: 5%;
+            color: #d5d2d2;
+            font-size: 27px;
+          }
+        }
+      }
+    }
+    .check-strings
+    {
+      width: 100%;
+      height: 24.7%;
+      display: flex;
+      justify-content: space-between;
+
+      .check-strings-text
+      {
+        color:#bdb9b9;
+        font-size: 14px;
+      }
+      .statistic-line-check-strings
+      {
+        height: 17px;
+        width: 100%;
+        background: #eaeaea;
+        border-radius: 8px;
+      }
+
+
+      .hosting-usage
+      {
+        width: 45%;
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 15px 20px;
+
+        .hosting-usage-number
+        {
+          color:#ff503f;
+          font-size: 25px;
+          font-weight: bold;
+          margin: 0;
         }
 
+        .hosting-progress
+        {
+          height: 100%;
+          width: 57%;
+          border-radius: 20px;
+          background: #ff503f;
+        }
+      }
 
+      .emails-read
+      {
+        width: 45%;
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 15px 20px;
+
+        .emails-read-number
+        {
+          color:#fdce56;
+          font-size: 25px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .emails-progress
+        {
+          height: 100%;
+          width: 57%;
+          border-radius: 20px;
+          background: #fdce56;
+        }
+      }
+    }
+  }
+  .right-boxes
+  {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    .weather {
+      width: 100%;
+      height: 25.6%;
+      background: #3bafda;
+      border-radius: 7px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-right: 40px;
+      padding-left:10px ;
+
+
+      .sun {
+        color:#f5f5f5;
+        font-size: 80px;
+      }
+
+      .temperature {
+        display: flex;
+        flex-direction: row;
+
+        .temperature-number {
+          color:#f5f5f5;
+          font-size: 60px;
+          margin-top: 15px;
+        }
+
+        .circle {
+          position: relative;
+          display: flex;
+          height: 13px;
+          width: 13px;
+          border-radius: 50%;
+          border-width: 3.5px;
+          border-style: solid;
+          border-color: #f5f5f5;
+          margin-top: 35px;
+        }
+      }
+      .weather-geolocation
+      {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top:10px ;
+
+        .geolocation
+        {
+          display: flex;
+          flex-direction: row;
+          color:#f5f5f5;
+
+          .city
+          {
+            margin-bottom: 0;
+            font-weight: bold;
+            margin-right: 8px;
+          }
+
+          .bi-geo-alt-fill
+          {
+            margin: 0;
+          }
+      }
+
+        .weather-description
+        {
+          color: #f5f5f5;
+          font-weight: bold;
+        }
+      }
+    }
+
+
+
+    .calendar
+    {
+      width: 100%;
+      height: 66.4%;
+      background: #ffffff;
+      border-radius: 7px;
+
+      .calendar-header
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        background: #fbfbfb;
+        border-radius: 7px;
+        padding: 0 30px;
+
+        #calendar-right-chevron
+        {
+          color: #7c95be;
+          font-size: 30px;
+          padding: 0;
+        }
+        .bi-chevron-left
+        {
+          color: #7c95be;
+          font-size: 30px;
+        }
+
+        .today-data
+        {
+          margin: 0;
+          color: #7c95be;
+          font-size: 25px;
+          font-weight: bold;
+        }
+      }
+      .calendar-body
+      {
+        padding: 10px 20px 0 10px;
+
+      }
+
+      .calendar-body ul
+      {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        color: #7c95be;
+      }
+      .calendar-body ul li
+      {
+        width: calc(100% / 7);
+        color: #7c95be;
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      .calendar-body .weeks li
+      {
+        font-weight: 700;
+      }
+
+      .events p
+      {
+        color:#7c95be
+      }
+
+      .events
+      {
+        padding: 0 20px 0 40px;
+        display: flex;
+        flex-direction: column;
+
+
+        .first-event, .second-event
+        {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .event-time
+          {
+            display: flex;
+            justify-content: center;
+            height: 25px;
+            width: 60px;
+            background: #7c95be;
+            border-radius:20px;
+            color: #ffffff;
+          }
+        }
       }
     }
   }
