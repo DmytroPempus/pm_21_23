@@ -5,12 +5,8 @@
 }
 
 body{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 1500px;
+
+  height: 1600px;
 }
 
 .header {
@@ -138,19 +134,16 @@ body{
   padding-right: 15px;
   padding-left: 10px;
   font-size: 18px;
-  text-decoration: none;
 }
 .bi-person-circle {
   font-size: 34px;
 }
 
 
-
-
 .menu
 {
   width: 322px;
-  height: 1500px;
+  height: 1615px;
   background-color:#232730;
   margin-top: 55px;
   position: absolute;
@@ -232,27 +225,25 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
 
 
-
-
-
-
-
 .main-container{
   padding:88px 31px;
   background: #f6f6f6;
   width: calc(100% - 322px);
-  height: 2000px;
+  height: calc(100% - 20px);
   margin-left:322px;
 
 }
 
 .twitter-box,.sales-box,.visitors-box,.message-box
 {
-  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 22%;
   height: 130px;
   background-color:white;
+  padding-right: 30px;
+  padding-left: 10px;
 }
 
 
@@ -299,9 +290,6 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   height: 72px;
   width: 72px;
   border-radius: 50%;
-  left: 22%;
-  top: 51%;
-  transform: translate(-50%, -50%);
 }
 
 .circle-twitter
@@ -325,8 +313,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
 .twitter-text,.sales-text,.visitors-text,.message-text
 {
-  padding-left: 30px;
-  padding-top: 20px;
+  padding-left: 10px;
 }
 
 .twitter-number,.sales-number,.visitors-number,.message-number
@@ -369,7 +356,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
   .site-statistic
   {
-    width: 61%;
+    width: 63%;
     height: 100%;
     background: white;
 
@@ -513,7 +500,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
   .left-boxes
   {
-    width: 61%;
+    width: 63%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -863,4 +850,233 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   }
 }
 
+
+.bottom-boxes
+{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  height:320px;
+  margin-top: 40px;
+
+  .notification-header,.data-graph-header
+  {
+    width:100%;
+    height: 19.5%;
+    background: #fafafa;
+    color: #a2a0a0;
+    font-size: 22px;
+    padding:0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #notification-header-text,#data-graph-header-text
+    {
+      margin: 0;
+    }
+  }
+  .notification-box
+  {
+    width:63%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 7px;
+
+    .notification-body
+    {
+      width: 100%;
+      height: 80.5%;
+      padding: 20px;
+
+      .notification-blocks
+      {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+
+        .notification-block
+        {
+          width: 100%;
+          height: 22.3%;
+          display: flex;
+          flex-direction: row;
+
+        }
+      }
+
+      .notification-icon
+      {
+        width: 15%;
+
+        .circle-twitter-notification,.circle-mail-notification,.circle-dollar-notification
+        {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 55px;
+          width: 55px;
+          border-radius: 50%;
+
+
+          .twitter-notification-box, .mail-notification-box, .dollar-notification-box
+          {
+            position: relative;
+            color:#f4f4f5;
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 26px;
+            font-size: 30px;
+            bottom:13px;
+          }
+          .twitter-notification-box
+          {
+            background: #66b7f0;
+          }
+          .mail-notification-box
+          {
+            background: #f5bb42;
+          }
+          .dollar-notification-box
+          {
+            background: #a5c562;
+          }
+        }
+        .circle-twitter-notification
+        {
+          background: #eef7fd;
+        }
+        .circle-mail-notification
+        {
+          background: #fef6e4;
+        }
+        .circle-dollar-notification
+        {
+          background: #edf3df;
+        }
+      }
+
+
+
+      .notification-text-block
+      {
+        width: 100%;
+        height: 55px;
+        border-radius: 10px;
+
+        .notification-text
+        {
+          color: #f6f6f6;
+          font-weight: bolder;
+          font-size: 15px;
+        }
+
+        .bi-caret-left-fill
+        {
+          margin-top: 10px;
+          font-size: 30px;
+          position: relative;
+          right: 20px;
+          top:3px;
+        }
+        #twitter-text-icon
+        {
+          color: #8ac6f0;
+        }
+        #mail-text-icon
+        {
+          color:#f2ca79;
+        }
+        #dollar-text-icon
+        {
+          color: #b5d07e;
+        }
+        .notification-text
+        {
+          width: 90%;
+        }
+      }
+      #twitter-text
+      {
+        background: #8ac6f0;
+      }
+      #mail-text
+      {
+        background: #f2ca79;
+      }
+      #dollar-text
+      {
+        background: #b5d07e;
+      }
+    }
+  }
+
+  .data-graph
+  {
+    width: 33%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+
+    .data-graph-body
+    {
+      width: 100%;
+      height: 80.5%;
+      display: flex;
+      flex-direction: column;
+
+      .data-graph-main-chart
+      {
+        width: 100%;
+        height: 58.5%;
+        background: #9972b5;
+      }
+
+      .data-graph-bottom
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:25px;
+
+        .total-earned
+        {
+          display: flex;
+          flex-direction: column;
+          width:50%;
+          height: 100%;
+
+          .total-earned-number
+          {
+            margin: 0;
+            font-size: 25px;
+            font-weight: bold;
+            color: #5f5f5f;
+          }
+          .total-earned-text
+          {
+            margin: 0;
+            font-size: 18px;
+            color: #7f7777;
+          }
+
+        }
+        .small-chart
+        {
+          width:50%;
+          height: 100%;
+          background: #9972b5;
+        }
+      }
+    }
+  }
+}
 
