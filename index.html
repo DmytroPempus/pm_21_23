@@ -54,68 +54,71 @@
 
 
     <div class="menu">
-        <div class="menu-Dashboard">
-            <i class="bi bi-speedometer2"></i>
-            <a class="menu-name" href="#">Dashboard</a>
-            <i class="bi bi-chevron-right" ></i>
+        <div class="menu-content">
+            <div class="menu-item">
+                <i class="bi bi-speedometer2" ></i>
+                <a class="menu-name" href="#">Dashboard</a>
+                <i class="bi bi-chevron-right" ></i>
+            </div>
+
+            <div class="menu-item">
+                <i class="bi bi-diagram-3-fill"></i>
+                <a class="menu-name" href="#">Charts</a>
+                <i class="bi bi-chevron-right" ></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-text-left"></i>
+                <a class="menu-name" href="#">Tasks</a>
+                <i class="bi bi-chevron-right" ></i>
+            </div>
+            <div class="menu-item" id="menu-comment">
+                <i class="bi bi-chat-left-fill"></i>
+                <a class="menu-name" href="#">Comment</a>
+                <span class="notification-badge-comment">9</span>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-gear-fill" id="setting-menu"></i>
+                <a class="menu-name" href="#">Setting</a>
+                <i class="bi bi-chevron-right" ></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-star-fill"></i>
+                <a class="menu-name" href="#">Feedback</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-link-45deg"></i>
+                <a class="menu-name" href="#">Links</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-share-fill"></i>
+                <a class="menu-name" href="#">Social</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-envelope-fill" id="env-left-menu"></i>
+                <a class="menu-name" href="#">Mail</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-trophy-fill"></i>
+                <a class="menu-name" href="#">Achievement</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item">
+                <i class="bi bi-power"></i>
+                <a class="menu-name" href="#">Logout</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="menu-item" id="collapse-menu">
+                <i class="bi bi-caret-left-square-fill"></i>
+                <a class="menu-name" href="#">Collapse Menu</a>
+                <i class="bi bi-chevron-right"></i>
+            </div>
         </div>
 
-        <div class="menu-item">
-            <i class="bi bi-diagram-3-fill"></i>
-            <a class="menu-name" href="#">Charts</a>
-            <i class="bi bi-chevron-right" ></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-text-left"></i>
-            <a class="menu-name" href="#">Tasks</a>
-            <i class="bi bi-chevron-right" ></i>
-        </div>
-        <div class="menu-item" id="menu-comment">
-            <i class="bi bi-chat-left-fill"></i>
-            <a class="menu-name" href="#">Comment</a>
-            <span class="notification-badge-comment">9</span>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-gear-fill" id="setting-menu"></i>
-            <a class="menu-name" href="#">Setting</a>
-            <i class="bi bi-chevron-right" ></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-star-fill"></i>
-            <a class="menu-name" href="#">Feedback</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-link-45deg"></i>
-            <a class="menu-name" href="#">Links</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-share-fill"></i>
-            <a class="menu-name" href="#">Social</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-envelope-fill" id="env-left-menu"></i>
-            <a class="menu-name" href="#">Mail</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-trophy-fill"></i>
-            <a class="menu-name" href="#">Achievement</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-item">
-            <i class="bi bi-power"></i>
-            <a class="menu-name" href="#">Logout</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="menu-CollapseMenu">
-            <i class="bi bi-caret-left-square-fill"></i>
-            <a class="menu-name" href="#">Collapse Menu</a>
-            <i class="bi bi-chevron-right"></i>
-        </div>
     </div>
 
 
@@ -172,7 +175,6 @@
                     <div class="setting-site-statistic">
                         <i class="bi bi-gear-fill" id="setting-site-statistic"></i>
                     </div>
-
                 </div>
 
                 <div class="site-statistic-graph">
@@ -334,11 +336,11 @@
                     </div>
                     <div class="events">
                         <div class="first-event">
-                            <p>Meat your friends today</p>
+                            <p class="event-text">Meat your friends today</p>
                            <span class="event-time"> 11:30 </span>
                         </div>
                         <div class="second-event">
-                            <p>Twit thanks for your followers</p>
+                            <p>Tweet thanks for your followers</p>
                             <span class="event-time">21:00</span>
                         </div>
                     </div>

@@ -1,3 +1,12 @@
+$maxWidth:1600;
+@mixin adaptiv-value($property,$startSize,$minSize)
+{
+  $addSize: $startSize - $minSize;
+  #{$property}:calc(#{$minSize + px} + #{$addSize} * ((100vw - 1024px) / #{$maxWidth - 1024}));
+
+}
+
+
 *{
   margin:0;
   padding:0;
@@ -5,8 +14,10 @@
 }
 
 body{
-
-  height: 1600px;
+  display: flex;
+  flex-direction: row;
+  @include adaptiv-value("height",1565 ,1250 );
+  width: 100%;
 }
 
 .header {
@@ -14,9 +25,8 @@ body{
   width: 100%;
   position: absolute;
   top: 0;
-  display: flex;
-  align-items: center;
   z-index: 1;
+
 }
 .navbar-header {
   display: flex;
@@ -29,14 +39,13 @@ body{
   padding-right: 12.7%;
   padding-left: 2%;
   color:white;
-  font-size: 30px;
-  margin-bottom: 11px;
+  @include adaptiv-value("font-size", 30, 23);
 }
 
 .search-box
 {
   width: 33%;
-  height: 66%;
+  @include adaptiv-value("height", 40, 35);
   position: relative;
   background: #31343d;
   border-radius: 5px;
@@ -77,21 +86,22 @@ body{
 }
 .bi-bell-fill
 {
-  font-size: 22px;
+  @include adaptiv-value("font-size", 24, 20)
 }
 .notification-badge-bell {
   position: absolute;
   top: 0;
-  right:-3px;
+  right:-3%;
   background-color: #e52435;
   color: white;
-  width: 13px;
-  height: 13px;
+  @include adaptiv-value("width", 13, 11);
+  @include adaptiv-value("height", 13, 11);
   border-radius: 50%;
   padding:0;
-  font-size: 13px;
-  text-align: center;
-  line-height: 13px;
+  @include adaptiv-value("font-size", 13, 11);
+  text-align:center;
+  @include adaptiv-value("line-height", 13, 11);
+
 }
 .top-menu-mail
 {
@@ -100,21 +110,21 @@ body{
 }
 #env-top-menu
 {
-  font-size: 25px;
+  @include adaptiv-value("font-size", 25, 21);
 }
 .notification-badge-mail {
   position: absolute;
   top: 0;
   right:-4px;
-  width: 13px;
-  height: 13px;
+  @include adaptiv-value("width", 13, 11);
+  @include adaptiv-value("height", 13, 11);
   background-color:#f6bb42;
   color: white;
   border-radius: 50%;
   padding:0;
-  font-size: 13px;
+  @include adaptiv-value("font-size", 13, 11);
   text-align: center;
-  line-height: 13px;
+  @include adaptiv-value("line-height", 13, 11);
 }
 
 .top-menu-avatar {
@@ -131,68 +141,67 @@ body{
 .avatar-text
 {
   margin: 0;
-  padding-right: 15px;
-  padding-left: 10px;
-  font-size: 18px;
+  @include adaptiv-value("padding-right", 15, 10);
+  @include adaptiv-value("padding-left", 10, 7);
+  @include adaptiv-value("font-size", 18, 15);
 }
 .bi-person-circle {
-  font-size: 34px;
+  @include adaptiv-value("font-size", 34, 30);
 }
-
 
 .menu
 {
-  width: 322px;
-  height: 1615px;
+  @include adaptiv-value("height",1620 ,1295 );
   background-color:#232730;
-  margin-top: 55px;
-  position: absolute;
-  left: 0;
-  z-index: 1;
+  width: 23vw;
+
+  .menu-content
+  {
+    padding-top: 30px;
+    @include adaptiv-value("padding-left", 30, 15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 800px;
+    min-width: 260px;
+    background-color:#232730;
+    margin-top: 55px;
+    z-index: 1;
+  }
 }
+
 .menu-item
 {
-  padding-top: 20px;
-  padding-left: 20px;
 
 }
-.menu-Dashboard
+#collapse-menu
 {
-  padding-top: 34px;
-  padding-left: 20px;
-
+padding-top: 40px;
 }
-.menu-CollapseMenu
-{
-  padding-top: 60px;
-  padding-left: 20px;
 
-}
 .menu-name{
-  padding-top:7px ;
   padding-left: 22px;
   position: absolute;
   color: #808690;
   text-decoration: none;
-  font-weight:bold;
-}
-.left-menu-imagine{
-  padding-left:11px ;
-  width: 35px;
-  height: 20px;
-}
-.right-shape{
-  position: absolute;
-  float: right;
+  font-weight:500;
+  @include adaptiv-value("font-size", 20, 15);
+  @include adaptiv-value("padding-top", 7, 4);
+
 
 }
+
+
 
 .bi-chevron-right
 {
   color:#a3aab4;
   float:right;
-  padding-right:53px;
-  padding-top: 7px;
+  @include adaptiv-value("padding-top",6,3);
+  @include adaptiv-value("padding-right",53,30);
+  @include adaptiv-value("font-size", 18, 15);
+
 }
 .bi-caret-left-square-fill
 {
@@ -202,7 +211,7 @@ body{
 i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-menu,.bi-star-fill,.bi-link-45deg,.bi-share-fill,#env-left-menu,.bi-trophy-fill,.bi-power,.bi-caret-left-square-fill
 {
   color:#a3aab4;
-  font-size: 24px;
+  @include adaptiv-value("font-size", 24, 21);
 }
 #menu-comment
 {
@@ -210,27 +219,27 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 }
 .notification-badge-comment {
   position: absolute;
-  top: 30px;
+  top: 8px;
   right:90px;
-  width: 20px;
-  height: 19px;
+  @include adaptiv-value("width", 20, 17);
+  @include adaptiv-value("height", 19, 16);
   background-color:#c96d23;
   color: white;
   border-radius: 35%;
   padding:0;
-  font-size: 19px;
+  @include adaptiv-value("font-size", 19, 16);
   text-align: center;
-  line-height: 19px;
+  @include adaptiv-value("line-height", 20, 16);
 }
 
 
 
 .main-container{
-  padding:88px 31px;
+  @include adaptiv-value("margin-top",50,45 );
+  @include adaptiv-value("padding",31 ,20 );
   background: #f6f6f6;
-  width: calc(100% - 322px);
-  height: calc(100% - 20px);
-  margin-left:322px;
+  width: 77vw;
+  height: 100%
 
 }
 
@@ -240,10 +249,10 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   justify-content: center;
   align-items: center;
   width: 22%;
-  height: 130px;
+  @include adaptiv-value("height",125 ,90 );
   background-color:white;
-  padding-right: 30px;
-  padding-left: 10px;
+  @include adaptiv-value("padding-right",30 ,20 );
+  @include adaptiv-value("padding-left",10 ,7 );
 }
 
 
@@ -251,15 +260,15 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 {
   position: relative;
   color:#f4f4f5;
-  width: 60px;
-  height: 60px;
+  @include adaptiv-value("width",60 ,50 );
+  @include adaptiv-value("height",60 ,50 );
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 26px;
-  font-size: 30px;
-  bottom:13px;
+  @include adaptiv-value("margin-top",26 ,22 );
+  @include adaptiv-value("font-size",35 ,27 );
+  @include adaptiv-value("bottom",13 ,11 );
 }
 .twitter-top-box
 {
@@ -287,8 +296,9 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 72px;
-  width: 72px;
+  @include adaptiv-value("width",72 ,60 );
+  @include adaptiv-value("height",72 ,60 );
+  min-width: 60px;
   border-radius: 50%;
 }
 
@@ -318,13 +328,14 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
 .twitter-number,.sales-number,.visitors-number,.message-number
 {
-  font-size: 25px;
+  @include adaptiv-value("font-size",24 ,18 );
   font-weight:bold;
   margin: 0;
 }
 
 .twitter-description,.sales-description,.visitors-description,.message-description{
   margin: 0;
+  @include adaptiv-value("font-size",18 ,13 );
   color: #979090
 }
 
@@ -350,9 +361,9 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  margin-top: 40px;
+  @include adaptiv-value("margin-top",40 ,30 );
   width: 100%;
-  height: 420px;
+  @include adaptiv-value("height",420 ,350 );
 
   .site-statistic
   {
@@ -365,23 +376,24 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     {
       width:100%;
       height: 48px;
+      @include adaptiv-value("height",48 ,40 );
       background: #fafafa;
       color: #a2a0a0;
-      font-size: 22px;
+      @include adaptiv-value("font-size",22 ,20 );
       padding-left: 10px;
       padding-top: 5px;
 
 
       #setting-site-statistic
       {
-        font-size: 25px;
+        @include adaptiv-value("font-size",25 ,21);
       }
       .setting-site-statistic
       {
         display: flex;
         position: relative;
         justify-content: right;
-        padding-right:30px ;
+        @include adaptiv-value("padding-right",30 ,20 );
         bottom: 50px;
       }
 
@@ -390,7 +402,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     .site-statistic-graph
     {
       width:100%;
-      height:calc(100% - 48px);
+      height: calc(100% - 40px);
       background: #8bc152;
     }
   }
@@ -398,7 +410,6 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   .yearly-statistic
   {
     position: relative;
-    margin-left: 38px;
     background: #ffffff;
     display: flex;
     flex-direction: column;
@@ -409,7 +420,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     {
       background: #8bc152;
       color: #fafcf7;
-      font-size: 20px;
+      @include adaptiv-value("font-size",20 ,18 );
       width: 100%;
       height: 42%;
       padding:13px;
@@ -418,16 +429,17 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     {
       width: 100%;
       height: 58%;
-      padding-left:20px ;
-      padding-right:30px ;
+      @include adaptiv-value("padding-left",20 ,15 );
+      @include adaptiv-value("padding-right",30 ,22 );
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      padding-bottom: 15px;
+      @include adaptiv-value("padding-bottom",15 ,10 );
 
 
       .yearly-text
       {
+        @include adaptiv-value("font-size",18 ,15 );
         margin: 0;
         color:#bbbaba;
       }
@@ -443,7 +455,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         {
           margin: 0;
           color:#f6bb42;
-          font-size:20px ;
+          @include adaptiv-value("font-size",23 ,19 );
         }
         .sales-progress
         {
@@ -459,7 +471,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         {
           margin: 0;
           color:#8cc152;
-          font-size:20px ;
+          @include adaptiv-value("font-size",23 ,19 );
         }
         .visitors-progress
         {
@@ -476,7 +488,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         {
           margin: 0;
           color:#73cba7;
-          font-size:20px ;
+          @include adaptiv-value("font-size",23 ,19 );
         }
         .customers-progress
         {
@@ -496,7 +508,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   justify-content: space-between;
   margin-top: 40px;
   width: 100%;
-  height: 500px;
+  @include adaptiv-value("height",500, 400 );
 
   .left-boxes
   {
@@ -513,14 +525,13 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       width: 100%;
       height: 66.7%;
       background: #ffffff;
-      font-size: 20px;
-
 
       .todo-list-header
       {
         display: flex;
         width: 100%;
-        height: 55px;
+        @include adaptiv-value("height", 55, 45 );
+
         padding-left: 20px;
         background: #1fb5ab;
         color:white;
@@ -530,11 +541,11 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         {
           width: 100%;
           margin: 0;
-          font-size: 25px;
+          @include adaptiv-value("font-size", 25, 22 );
         }
         .plus{
           width: 30%;
-          font-size: 35px;
+          @include adaptiv-value("font-size", 35, 30 );
           font-weight: bold;
           display: flex;
           justify-content: flex-end;
@@ -547,9 +558,10 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         width: 100%;
         height: calc(100% - 55px);
         background: #ffffff;
-        padding-right:20px;
-        padding-left: 25px;
-        padding-bottom: 10px;
+        @include adaptiv-value("padding-right", 20, 15 );
+        @include adaptiv-value("padding-left", 25, 18 );
+        @include adaptiv-value("padding-top", 10, 7 );
+        @include adaptiv-value("padding-bottom", 15, 10 );
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -557,8 +569,9 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
         .todo-list-tasks
         {
+          @include adaptiv-value("padding", 15, 10 );
           width: 100%;
-          height: 50px;
+          @include adaptiv-value("height", 50, 40 );
           background: #f6f6f6;
           border-radius: 5px;
           display: flex;
@@ -572,27 +585,29 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
             margin: 0;
             color: #a7a2a2;
             padding-left: 10px;
-            font-size: 15px;
+            @include adaptiv-value("font-size", 18, 15 );
           }
 
           .bi-three-dots-vertical
           {
             width: 5%;
             color: #cbc8c8;
+            @include adaptiv-value("font-size", 25, 20 );
+
           }
 
           .bi-check2
           {
             width: 5%;
             color: #d5d2d2;
-            font-size: 30px;
+            @include adaptiv-value("font-size", 30, 25 );
             display: flex;
           }
           .bi-x
           {
             width: 5%;
             color: #d5d2d2;
-            font-size: 27px;
+            @include adaptiv-value("font-size", 37, 24 );
           }
         }
       }
@@ -607,11 +622,13 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       .check-strings-text
       {
         color:#bdb9b9;
-        font-size: 14px;
+        @include adaptiv-value("font-size", 14, 12 );
+        @include adaptiv-value("margin-bottom", 15, 5 );
+
       }
       .statistic-line-check-strings
       {
-        height: 17px;
+        @include adaptiv-value("height", 17, 13 );
         width: 100%;
         background: #eaeaea;
         border-radius: 8px;
@@ -628,7 +645,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         .hosting-usage-number
         {
           color:#ff503f;
-          font-size: 25px;
+          @include adaptiv-value("font-size", 25, 22 );
           font-weight: bold;
           margin: 0;
         }
@@ -652,7 +669,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         .emails-read-number
         {
           color:#fdce56;
-          font-size: 25px;
+          @include adaptiv-value("font-size", 25, 22 );
           font-weight: bold;
           margin: 0;
         }
@@ -684,13 +701,16 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      padding-right: 40px;
-      padding-left:10px ;
+      @include adaptiv-value("padding-right", 40, 20 );
+      @include adaptiv-value("padding-left", 10, 5 );
+
 
 
       .sun {
         color:#f5f5f5;
-        font-size: 80px;
+        @include adaptiv-value("font-size", 80,70 );
+        @include adaptiv-value("padding-left",0, 10 );
+
       }
 
       .temperature {
@@ -699,8 +719,9 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
         .temperature-number {
           color:#f5f5f5;
-          font-size: 60px;
-          margin-top: 15px;
+          @include adaptiv-value("font-size",60, 50 );
+          margin-top: 13px;
+          padding-left: 7px;
         }
 
         .circle {
@@ -732,19 +753,21 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
           {
             margin-bottom: 0;
             font-weight: bold;
-            margin-right: 8px;
+            padding-right: 8px;
+            padding-left: 10px;
           }
 
           .bi-geo-alt-fill
           {
             margin: 0;
           }
-      }
+        }
 
         .weather-description
         {
           color: #f5f5f5;
           font-weight: bold;
+          padding-left: 10px;
         }
       }
     }
@@ -773,27 +796,27 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         #calendar-right-chevron
         {
           color: #7c95be;
-          font-size: 30px;
+          @include adaptiv-value("font-size",30 ,25 );
           padding: 0;
         }
         .bi-chevron-left
         {
           color: #7c95be;
-          font-size: 30px;
+          @include adaptiv-value("font-size",30 ,25 );
         }
 
         .today-data
         {
           margin: 0;
           color: #7c95be;
-          font-size: 25px;
+          @include adaptiv-value("font-size",25 ,22 );
           font-weight: bold;
         }
       }
       .calendar-body
       {
-        padding: 10px 20px 0 10px;
-
+        @include adaptiv-value("padding-left",40 ,20 );
+        @include adaptiv-value("font-size",25 ,22 );
       }
 
       .calendar-body ul
@@ -802,13 +825,17 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         flex-wrap: wrap;
         list-style: none;
         color: #7c95be;
+        padding-left: 0;
+        padding-top: 5px;
+        @include adaptiv-value("font-size",17 ,14 );
+
       }
       .calendar-body ul li
       {
         width: calc(100% / 7);
         color: #7c95be;
         font-weight: 500;
-        font-size: 17px;
+        @include adaptiv-value("font-size",17 ,14 );
       }
 
       .calendar-body .weeks li
@@ -824,6 +851,8 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       .events
       {
         padding: 0 20px 0 40px;
+        @include adaptiv-value("padding-right",20 ,10 );
+        @include adaptiv-value("padding-left",40 ,20 );
         display: flex;
         flex-direction: column;
 
@@ -833,13 +862,21 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          @include adaptiv-value("font-size",17 ,12 );
+
+          .event-text
+          {
+            margin: 0;
+          }
+
 
           .event-time
           {
             display: flex;
             justify-content: center;
-            height: 25px;
-            width: 60px;
+            @include adaptiv-value("height",25 ,16 );
+            @include adaptiv-value("width",60 ,40 );
+            min-height:16px ;
             background: #7c95be;
             border-radius:20px;
             color: #ffffff;
@@ -856,7 +893,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   display: flex;
   justify-content: space-between;
   width:100%;
-  height:320px;
+  @include adaptiv-value("height",320 ,250 );
   margin-top: 40px;
 
   .notification-header,.data-graph-header
@@ -865,7 +902,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     height: 19.5%;
     background: #fafafa;
     color: #a2a0a0;
-    font-size: 22px;
+    @include adaptiv-value("font-size",22,19 );
     padding:0 20px;
     display: flex;
     justify-content: space-between;
@@ -887,7 +924,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     {
       width: 100%;
       height: 80.5%;
-      padding: 20px;
+      @include adaptiv-value("padding",20 ,10 );
 
       .notification-blocks
       {
@@ -918,8 +955,9 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 55px;
-          width: 55px;
+          @include adaptiv-value("height",55 ,43 );
+          @include adaptiv-value("width",55 ,43 );
+          min-width: 40px;
           border-radius: 50%;
 
 
@@ -927,14 +965,14 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
           {
             position: relative;
             color:#f4f4f5;
-            width: 47px;
-            height: 47px;
+            @include adaptiv-value("width",47 ,37 );
+            @include adaptiv-value("height",47 ,37 );
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 26px;
-            font-size: 30px;
+            @include adaptiv-value("font-size",30 ,25 );
             bottom:13px;
           }
           .twitter-notification-box
@@ -969,22 +1007,26 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       .notification-text-block
       {
         width: 100%;
-        height: 55px;
+        @include adaptiv-value("height",55 ,45 );
         border-radius: 10px;
 
         .notification-text
         {
           color: #f6f6f6;
+          @include adaptiv-value("font-size",16 ,11.4 );
           font-weight: bolder;
-          font-size: 15px;
+          position: relative;
+          bottom:3px;
+          right: 15px;
+
         }
 
         .bi-caret-left-fill
         {
           margin-top: 10px;
-          font-size: 30px;
+          @include adaptiv-value("font-size",30 ,25 );
           position: relative;
-          right: 20px;
+          @include adaptiv-value("right",20 ,14 );
           top:3px;
         }
         #twitter-text-icon
@@ -1002,11 +1044,13 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         .notification-text
         {
           width: 90%;
+
         }
       }
       #twitter-text
       {
         background: #8ac6f0;
+
       }
       #mail-text
       {
@@ -1045,7 +1089,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding:25px;
+        @include adaptiv-value("padding",25 ,15 );
 
         .total-earned
         {
@@ -1057,14 +1101,14 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
           .total-earned-number
           {
             margin: 0;
-            font-size: 25px;
+            @include adaptiv-value("font-size",25 ,19 );
             font-weight: bold;
             color: #5f5f5f;
           }
           .total-earned-text
           {
             margin: 0;
-            font-size: 18px;
+            @include adaptiv-value("font-size",18 ,15 );
             color: #7f7777;
           }
 
