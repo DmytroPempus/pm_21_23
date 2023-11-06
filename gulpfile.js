@@ -7,6 +7,7 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const chartJs = require('chart.js');
 
 
 function css_style() {
