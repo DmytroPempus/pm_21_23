@@ -27,12 +27,12 @@ body{
   top: 0;
   z-index: 1;
 
-
 }
 .navbar-header {
   display: flex;
   align-items: center;
-
+  list-style: none;
+  margin: 0;
 }
 
 .top-menu-logo
@@ -60,21 +60,29 @@ body{
   width:40px;
   height:40px;
   display:flex;
+  @include adaptiv-value("font-size", 23, 18);
   justify-content:center;
   align-items:center;
 }
+.search-btn:hover
+{
+  @include adaptiv-value("font-size", 27, 21);
+
+}
+
 .search-txt
 {
   border:none;
   background: none;
   outline:none;
   float:left;
-  padding:0;
-  color:black;
+  color:white;
   font-size:16px;
   transition:0.4s;
   line-height:40px ;
   width: 80%;
+  padding-left: 10px;
+
 }
 .bi-bell-fill,#env-top-menu
 {
@@ -90,6 +98,13 @@ body{
 {
   @include adaptiv-value("font-size", 24, 20)
 }
+.bi-bell-fill:hover
+{
+  @include adaptiv-value("font-size", 27, 23)
+
+}
+
+
 .notification-badge-bell {
   position: absolute;
   top: 0;
@@ -114,6 +129,12 @@ body{
 {
   @include adaptiv-value("font-size", 25, 21);
 }
+
+#env-top-menu:hover
+{
+  @include adaptiv-value("font-size", 29, 24)
+
+}
 .notification-badge-mail {
   position: absolute;
   top: 0;
@@ -132,8 +153,8 @@ body{
 .top-menu-avatar {
   margin-left: auto;
   padding-right: 2.3%;
-
 }
+
 .top-menu-avatar a {
   display: flex;
   align-items: center;
@@ -146,9 +167,19 @@ body{
   @include adaptiv-value("padding-right", 15, 10);
   @include adaptiv-value("padding-left", 10, 7);
   @include adaptiv-value("font-size", 18, 15);
+
 }
 .bi-person-circle {
-  @include adaptiv-value("font-size", 34, 30);
+  @include adaptiv-value("font-size", 40, 33);
+}
+
+.bi-chevron-down
+{
+  font-size: 18px;
+}
+.bi-chevron-down:hover
+{
+  font-size: 20px;
 }
 
 .menu
@@ -157,11 +188,10 @@ body{
   background-color:#232730;
   width: 23vw;
 
-
   .menu-content
   {
     padding-top: 30px;
-    @include adaptiv-value("padding-left", 30, 15);
+    @include adaptiv-value("padding-left", 20, 5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -171,16 +201,40 @@ body{
     background-color:#232730;
     margin-top: 55px;
     z-index: 1;
+    list-style: none;
   }
 }
 
+
 .menu-item
 {
-
+  padding-bottom: 7px;
+  width: 20vw;
+  @include adaptiv-value("width",330 ,225 );
 }
+
+.menu-item.active
+{
+  background: #31343d;
+  border-radius: 5px;
+}
+
+.menu-item:hover
+{
+  background: #31343d;
+  padding-top: 2px;
+  transition-duration: 0.2s;
+}
+
+
 #collapse-menu
 {
-padding-top: 40px;
+  margin-top: 40px;
+}
+
+.menu.collapse
+{
+  width: 0;
 }
 
 .menu-name{
@@ -191,8 +245,6 @@ padding-top: 40px;
   font-weight:500;
   @include adaptiv-value("font-size", 20, 15);
   @include adaptiv-value("padding-top", 7, 4);
-
-
 }
 
 
@@ -201,11 +253,11 @@ padding-top: 40px;
 {
   color:#a3aab4;
   float:right;
-  @include adaptiv-value("padding-top",6,3);
-  @include adaptiv-value("padding-right",53,30);
+  @include adaptiv-value("padding-top",9,6);
+  @include adaptiv-value("padding-right",53,15);
   @include adaptiv-value("font-size", 18, 15);
-
 }
+
 .bi-caret-left-square-fill
 {
   color:white;
@@ -215,15 +267,17 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 {
   color:#a3aab4;
   @include adaptiv-value("font-size", 24, 21);
+  padding-left: 10px;
 }
+
 #menu-comment
 {
   position:relative;
 }
 .notification-badge-comment {
   position: absolute;
-  top: 8px;
-  right:90px;
+  @include adaptiv-value("top", 12, 9);
+  @include adaptiv-value("right", 90, 50);
   @include adaptiv-value("width", 20, 17);
   @include adaptiv-value("height", 19, 16);
   background-color:#c96d23;
@@ -235,7 +289,14 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   @include adaptiv-value("line-height", 20, 16);
 }
 
+.notification-badge-comment:hover
+{
+  @include adaptiv-value("font-size", 22, 18);
+  @include adaptiv-value("line-height", 22, 18);
+  @include adaptiv-value("width", 22, 18);
+  @include adaptiv-value("height", 21, 18);
 
+}
 
 .main-container{
   @include adaptiv-value("margin-top",50,45 );
@@ -391,6 +452,11 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       {
         @include adaptiv-value("font-size",25 ,21);
       }
+      #setting-site-statistic:hover
+      {
+        @include adaptiv-value("font-size",28 ,22);
+      }
+
       .setting-site-statistic
       {
         display: flex;
@@ -560,6 +626,12 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
           justify-content: flex-end;
           padding-right: 20px;
         }
+        .plus:hover
+        {
+          @include adaptiv-value("font-size", 40, 34 );
+          transition-duration: 0.2s;
+        }
+
       }
 
       .todo-list-body
@@ -604,6 +676,12 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
             @include adaptiv-value("font-size", 25, 20 );
 
           }
+          .bi-three-dots-vertical:hover
+          {
+            @include adaptiv-value("font-size", 28, 22 );
+            transition-duration: 0.2s;
+
+          }
 
           .bi-check2
           {
@@ -612,11 +690,22 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
             @include adaptiv-value("font-size", 30, 25 );
             display: flex;
           }
+          .bi-check2:hover
+          {
+            @include adaptiv-value("font-size", 34, 28 );
+            transition-duration: 0.2s;
+          }
           .bi-x
           {
             width: 5%;
             color: #d5d2d2;
             @include adaptiv-value("font-size", 37, 24 );
+          }
+          .bi-x:hover
+          {
+            @include adaptiv-value("font-size", 40, 28 );
+            transition-duration: 0.2s;
+
           }
         }
       }
@@ -802,17 +891,24 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         border-radius: 7px;
         padding: 0 30px;
 
-        #calendar-right-chevron
+        #calendar-right-chevron,.bi-chevron-left
         {
           color: #7c95be;
           @include adaptiv-value("font-size",30 ,25 );
+          @include adaptiv-value("width",40 ,30 );
+          @include adaptiv-value("height",40 ,30 );
           padding: 0;
+          cursor: pointer;
+          text-align: center;
+          @include adaptiv-value("line-height",40 ,25 );
+          border-radius: 50%;
         }
-        .bi-chevron-left
+
+        #calendar-right-chevron:hover,.bi-chevron-left:hover
         {
-          color: #7c95be;
-          @include adaptiv-value("font-size",30 ,25 );
+          background: #dedada;
         }
+
 
         .today-data
         {
@@ -824,8 +920,10 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       }
       .calendar-body
       {
-        @include adaptiv-value("padding-left",40 ,20 );
+        @include adaptiv-value("padding-left",20 ,10 );
+        @include adaptiv-value("padding-right",20 ,10 );
         @include adaptiv-value("font-size",25 ,22 );
+
       }
 
       .calendar-body ul
@@ -841,11 +939,20 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       }
       .calendar-body ul li
       {
+        display: flex;
+        justify-content: center;
         width: calc(100% / 7);
         color: #7c95be;
         font-weight: 500;
         @include adaptiv-value("font-size",17 ,14 );
+        border-radius: 50%;
       }
+
+      .calendar-body .days li:hover
+      {
+        color:#312f2f;
+      }
+
 
       .calendar-body .weeks li
       {
@@ -859,9 +966,9 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
       .events
       {
-        padding: 0 20px 0 40px;
+        padding-bottom:  40px;
         @include adaptiv-value("padding-right",20 ,10 );
-        @include adaptiv-value("padding-left",40 ,20 );
+        @include adaptiv-value("padding-left",30 ,20 );
         display: flex;
         flex-direction: column;
 
@@ -911,15 +1018,25 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
     height: 19.5%;
     background: #fafafa;
     color: #a2a0a0;
-    @include adaptiv-value("font-size",22,19 );
     padding:0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    #setting-notification,#setting-data-graph
+    {
+      @include adaptiv-value("font-size",27,22 );
+    }
+    #setting-notification:hover, #setting-data-graph:hover
+    {
+      @include adaptiv-value("font-size",30,25 );
+      transition-duration: 0.2s;
+    }
     #notification-header-text,#data-graph-header-text
     {
       margin: 0;
+      @include adaptiv-value("font-size",23,21 );
+
     }
   }
   .notification-box

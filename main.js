@@ -1,150 +1,68 @@
-const ctx1 = document.getElementById('site-statistic-graph_');
+const tabMenuItems = document.querySelectorAll(".menu-item");
+const menuContainer = document.querySelector(".menu");
 
-new Chart(ctx1, {
-    type: 'line',
-    data: {
-        labels: ['', 'Feb','','Mar', '', 'Apr','', 'May','','Jun'],
-        datasets: [
-            {
-            label: 'Sales',
-            data: [0, 550,100, 300, 120, 100 ,130,250,170,350,800],
-            backgroundColor: 'rgba(255, 200, 118, 0.5)',
-            borderWidth: 0,
-            fill:true,
-            tension: 0.5,
-            pointRadius: 0
-        },
-            {
-                label: 'users',
-                data: [0, 400, 100, 320, 125, 180, 130, 110, 150, 350],
-                backgroundColor: 'rgba(52, 197, 189, 0.7)',
-                borderWidth: 0,
-                fill: true,
-                tension: 0.5,
-                pointRadius: 0
-            }
-        ]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true,
-            }
-        },
+tabMenuItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+        let tabId = item.getAttribute("data-tab");
+        console.log(tabId);
+        let currentTab = document.querySelector(tabId);
 
-        plugins: {
-            legend: {
-            }
+        if (item.id === "collapse-menu") {
+            console.log("yep");
+            menuContainer.classList.add("collapse");
         }
+
+        tabMenuItems.forEach(function (item) {
+            item.classList.remove("active");
+        });
+
+        item.classList.add("active");
+    });
+});
+
+function createNewTask(taskText) {
+    const newTask = document.createElement('li');
+    newTask.classList.add('todo-list-tasks');
+
+    newTask.innerHTML = `
+        <i class="bi bi-three-dots-vertical"></i>
+        <p class="todo-list-tasks-text">${taskText}</p>
+        <i class="bi bi-check2"></i>
+        <i class="bi bi-x"></i>
+    `;
+    todoListBody.appendChild(newTask);
+
+    const deleteButton = newTask.querySelector('.bi-x');
+    deleteButton.addEventListener('click', function() {
+        newTask.remove();
+        saveTasksToLocalStorage();
+    });
+
+    saveTasksToLocalStorage();
+}
+
+const plusIcon = document.querySelector('.plus');
+const todoListBody = document.querySelector('.todo-list-body');
+
+plusIcon.addEventListener('click', function() {
+    const taskText = prompt('Enter task text:');
+
+    if (taskText.trim() !== '') {
+        createNewTask(taskText);
     }
 });
 
+function saveTasksToLocalStorage() {
+    const tasksTextArray = Array.from(todoListBody.children).map(task => task.querySelector('.todo-list-tasks-text').textContent);
+    localStorage.setItem('tasks', JSON.stringify(tasksTextArray));
+}
 
-const ctx2 = document.getElementById('sales-graph_');
-new Chart(ctx2, {
-    type: 'line',
-    data: {
-        labels: ['2014', '','','', '', '2015',''],
-        datasets: [
-            {
-                data: [0,20,20,30,40,20,50],
-                pointRadius: 3,
-                pointStyle: 'circle',
-                borderColor:"#f1f7ea",
-                borderWidth: 3,
-            },
-        ]
-    },
-    options: {
-        scales: {
-            x: {
-                ticks:{
-                    color: "#f1f7ea"
-                },
-                grid:
-                    {
-                        display: false
-                    }
-            },
+function restoreTasksFromLocalStorage() {
+    const tasksTextArray = JSON.parse(localStorage.getItem('tasks')) || [];
 
-            y: {
-                beginAtZero: true,
-                ticks:{
-                    color: "#f1f7ea"
+    tasksTextArray.forEach(taskText => {
+        createNewTask(taskText);
+    });
+}
 
-                },
-            }
-        },
-
-        plugins: {
-            legend: {
-                display:false,
-                color:"#f1f7ea"
-            }
-        }
-    }
-});
-
-
-const ctx3 = document.getElementById('data-graph-main-chart_');
-new Chart(ctx3, {
-    type: 'line',
-    data: {
-        labels: ['', '','','', '', '',''],
-        datasets: [
-            {
-                data: [10,20,10,30,22,8,25],
-                pointRadius: 4,
-                borderColor: "#f1f7ea",
-                pointBackgroundColor: '#f1f7ea',
-
-            },
-        ]
-    },
-    options: {
-        scales: {
-            x: {
-                display: false,
-            },
-            y: {
-                display: false,
-            }
-        },
-        plugins: {
-            legend: {
-                display: false,
-            },
-        }
-    }
-});
-
-
-const ctx4 = document.getElementById('small-chart_');
-new Chart(ctx4, {
-    type: 'bar',
-    data: {
-        labels: ['', '','','', '', '',''],
-        datasets: [
-            {
-                data: [10, 20, 10, 30, 22, 8, 25],
-                backgroundColor: '#9972b5',
-            },
-        ]
-    },
-    options: {
-        scales: {
-            x: {
-                display: false, // Приховати ось X
-            },
-            y: {
-                display: false, // Приховати ось Y
-            }
-        },
-        plugins: {
-            legend: {
-                display: false, // Приховати легенду
-            }
-        }
-    }
-});
-
+restoreTasksFromLocalStorage();
