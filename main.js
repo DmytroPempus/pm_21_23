@@ -1,24 +1,74 @@
-const tabMenuItems = document.querySelectorAll(".menu-item");
+const menuItems = document.querySelectorAll(".menu-item");
 const menuContainer = document.querySelector(".menu");
+const commentNotification = document.querySelector(".notification-badge-comment");
+const mainContainer = document.querySelector(".main-container");
+const putOutMenuIcon = document.querySelector("#put-out-menu");
 
-tabMenuItems.forEach(function (item) {
+putOutMenuIcon.style.display = "none";
+
+menuItems.forEach(function (item) {
     item.addEventListener("click", function () {
         let tabId = item.getAttribute("data-tab");
         console.log(tabId);
-        let currentTab = document.querySelector(tabId);
 
-        if (item.id === "collapse-menu") {
-            console.log("yep");
-            menuContainer.classList.add("collapse");
+        if (tabId === "#menuItem_12") {
+            putOutMenuIcon.style.display = "block";
+            menuContainer.classList.add("collapsed");
+            mainContainer.classList.add("expanded");
+            const collapseIcon = document.querySelector("#collapse-menu");
+            collapseIcon.style.display = "none";
+            commentNotification.classList.add("collapsed");
+            menuItems.forEach(function (menuItem) {
+                const textElement = menuItem.querySelector(".menu-name");
+                const chevronElement = menuItem.querySelector(".bi-chevron-right");
+                menuItem.classList.add("collapsed");
+
+                if (textElement) {
+                    textElement.style.display = "none";
+                }
+
+                if (chevronElement) {
+                    chevronElement.style.display = "none";
+                }
+            });
+
+            putOutMenuIcon.addEventListener("click", function () {
+                console.log("putOutMenuIcon clicked");
+                menuContainer.classList.remove("collapsed");
+                mainContainer.classList.remove("expanded");
+                collapseIcon.style.display = "block";
+                putOutMenuIcon.style.display = "none";
+                commentNotification.classList.remove("collapsed");
+
+                menuItems.forEach(function (menuItem) {
+
+                    const textElement = menuItem.querySelector(".menu-name");
+                    const chevronElement = menuItem.querySelector(".bi-chevron-right");
+                    menuItem.classList.remove("collapsed");
+
+                    if (textElement) {
+                        textElement.style.display = "block";
+                    }
+
+                    if (chevronElement) {
+                        chevronElement.style.display = "block";
+                    }
+                });
+            });
         }
 
-        tabMenuItems.forEach(function (item) {
-            item.classList.remove("active");
+        menuItems.forEach(function (menuItem) {
+            menuItem.classList.remove("active");
         });
 
         item.classList.add("active");
     });
 });
+
+
+
+
+
 
 function createNewTask(taskText) {
     const newTask = document.createElement('li');

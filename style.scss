@@ -23,9 +23,9 @@ body{
 .header {
   background-color: #1f232c;
   width: 100%;
-  position: absolute;
   top: 0;
   z-index: 1;
+  position: fixed;
 
 }
 .navbar-header {
@@ -209,8 +209,12 @@ body{
 .menu-item
 {
   padding-bottom: 7px;
-  width: 20vw;
-  @include adaptiv-value("width",330 ,225 );
+  @include adaptiv-value("width",320 ,225 );
+}
+
+.menu-item.collapsed
+{
+  width: 50px;
 }
 
 .menu-item.active
@@ -230,11 +234,12 @@ body{
 #collapse-menu
 {
   margin-top: 40px;
+
 }
 
-.menu.collapse
+.menu.collapsed
 {
-  width: 0;
+  width: 6vw;
 }
 
 .menu-name{
@@ -258,16 +263,18 @@ body{
   @include adaptiv-value("font-size", 18, 15);
 }
 
-.bi-caret-left-square-fill
-{
-  color:white;
-  width: 100px;
-}
-i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-menu,.bi-star-fill,.bi-link-45deg,.bi-share-fill,#env-left-menu,.bi-trophy-fill,.bi-power,.bi-caret-left-square-fill
+
+i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-menu,.bi-star-fill,.bi-link-45deg,.bi-share-fill,#env-left-menu,.bi-trophy-fill,.bi-power,.bi-caret-left-square-fill,.bi-caret-right-square-fill
 {
   color:#a3aab4;
-  @include adaptiv-value("font-size", 24, 21);
+  @include adaptiv-value("font-size", 27, 23);
   padding-left: 10px;
+}
+
+#put-out-menu
+{
+  width: 50px;
+  margin-bottom:30px;
 }
 
 #menu-comment
@@ -289,14 +296,18 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   @include adaptiv-value("line-height", 20, 16);
 }
 
-.notification-badge-comment:hover
+.notification-badge-comment.collapsed
 {
-  @include adaptiv-value("font-size", 22, 18);
-  @include adaptiv-value("line-height", 22, 18);
-  @include adaptiv-value("width", 22, 18);
-  @include adaptiv-value("height", 21, 18);
-
+  @include adaptiv-value("top",-3 , 9);
+  @include adaptiv-value("right", 5, 5);
+  @include adaptiv-value("width", 16, 17);
+  @include adaptiv-value("height", 16, 16);
+  @include adaptiv-value("font-size", 16, 16);
+  @include adaptiv-value("line-height", 13, 16);
 }
+
+
+
 
 .main-container{
   @include adaptiv-value("margin-top",50,45 );
@@ -304,7 +315,10 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   background: #f6f6f6;
   width: 77vw;
   height: 100%
-
+}
+.main-container.expanded
+{
+  width: 92.93vw;
 }
 
 .twitter-box,.sales-box,.visitors-box,.message-box
@@ -493,7 +507,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       @include adaptiv-value("font-size",20 ,18 );
       width: 100%;
       height: 42%;
-      @include adaptiv-value("padding",20 ,12 );
+      @include adaptiv-value("padding",10 ,12 );
 
       p {
         margin: 0;
@@ -600,6 +614,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       width: 100%;
       height: 66.7%;
       background: #ffffff;
+      overflow-y: auto;
 
       .todo-list-header
       {
@@ -1207,9 +1222,8 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       {
         width: 100%;
         height: 58.5%;
-        @include adaptiv-value("padding-left",25 ,15 );
-        @include adaptiv-value("padding-right",25 ,15 );
         background: #9972b5;
+        padding: 0 10px;
 
         .data-graph-main-chart-text
         {
