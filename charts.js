@@ -26,6 +26,8 @@ new Chart(ctx1, {
         ]
     },
     options: {
+        maintainAspectRatio: false,
+
         scales: {
             y: {
                 beginAtZero: true,
@@ -57,6 +59,8 @@ new Chart(ctx2, {
         ]
     },
     options: {
+
+
         scales: {
             x: {
                 ticks:{

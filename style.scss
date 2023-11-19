@@ -210,6 +210,8 @@ body{
 {
   padding-bottom: 7px;
   @include adaptiv-value("width",320 ,225 );
+  display: flex;
+  flex-direction: row;
 }
 
 .menu-item.collapsed
@@ -234,7 +236,6 @@ body{
 #collapse-menu
 {
   margin-top: 40px;
-
 }
 
 .menu.collapsed
@@ -243,7 +244,7 @@ body{
 }
 
 .menu-name{
-  padding-left: 22px;
+  @include adaptiv-value("padding-left", 60, 40);
   position: absolute;
   color: #808690;
   text-decoration: none;
@@ -257,9 +258,9 @@ body{
 .bi-chevron-right
 {
   color:#a3aab4;
-  float:right;
   @include adaptiv-value("padding-top",9,6);
   @include adaptiv-value("padding-right",53,15);
+  @include adaptiv-value("padding-left",240,150);
   @include adaptiv-value("font-size", 18, 15);
 }
 
@@ -298,7 +299,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
 .notification-badge-comment.collapsed
 {
-  @include adaptiv-value("top",-3 , 9);
+  @include adaptiv-value("top",-3 ,-3);
   @include adaptiv-value("right", 5, 5);
   @include adaptiv-value("width", 16, 17);
   @include adaptiv-value("height", 16, 16);
@@ -509,6 +510,8 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       height: 42%;
       @include adaptiv-value("padding",10 ,12 );
 
+
+
       p {
         margin: 0;
       };
@@ -591,6 +594,8 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   }
 }
 
+
+
 .middle-bottom-boxes
 {
   display: flex;
@@ -614,7 +619,7 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
       width: 100%;
       height: 66.7%;
       background: #ffffff;
-      overflow-y: auto;
+
 
       .todo-list-header
       {
@@ -660,12 +665,15 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
         @include adaptiv-value("padding-bottom", 15, 10 );
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+
+        overflow-y: auto;
+
 
 
         .todo-list-tasks
         {
           @include adaptiv-value("padding", 15, 10 );
+          margin-bottom: 20px;
           width: 100%;
           @include adaptiv-value("height", 50, 40 );
           background: #f6f6f6;
