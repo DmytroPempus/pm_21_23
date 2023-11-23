@@ -45,6 +45,7 @@
                         <i class="bi bi-person-circle"></i>
                        <p class="avatar-text"> Hi, Robert</p>
                         <i class="bi bi-chevron-down"></i>
+                        <i class="bi bi-chevron-up"></i>
                     </a>
                 </li>
         </ul>
@@ -188,8 +189,12 @@
 
             <div class="yearly-statistic">
                 <div class="sales-graph">
-                    <p class="yearly-sales-text">Yearly Sales</p>
-                    <canvas id="sales-graph_" width="600px" height="230px"></canvas>
+                    <div class="sales-graph-header">
+                      <span class="yearly-sales-text">Yearly Sales</span>
+                    </div>
+                    <div class="sales-graph-body">
+                        <canvas id="sales-graph_"></canvas>
+                    </div>
                 </div>
                 <div class="yearly-numbers">
                     <div class="yearly-sales">
@@ -378,7 +383,67 @@
 
         </div>
     </div>
+
+    <div class="personal-settings">
+        <i class="bi bi-caret-up-fill" id="arrow-up-person-menu"></i>
+        <ul class="personal-settings-body">
+            <li class="personal-settings-item">
+                <i class="bi bi-person-fill"></i>
+                <a class="person-menu-name" href="#">Profile</a>
+
+            </li>
+
+            <li class="personal-settings-item" >
+                <i class="bi bi-brush-fill"></i>
+                <a class="person-menu-name" href="#">Theme</a>
+            </li>
+            <li class="personal-settings-item" >
+                <i class="bi bi-backpack3-fill"></i>
+                <a class="person-menu-name" href="#">Portfolio</a>
+            </li>
+            <li class="personal-settings-item">
+                <i class="bi bi-door-open-fill"></i>
+                <a class="person-menu-name" href="#">Log out</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mail-menu">
+        <i class="bi bi-caret-up-fill" id="arrow-up-mail-menu"></i>
+        <div class="mails">
+            <i class="bi bi-person-circle"></i>
+            <span class="sender">Aaron</span>
+            <span class="mail-text">Waiting for your report!</span>
+            <span class="time">13:15</span>
+        </div>
+    </div>
 </main>
+
+<div class="notification-menu">
+    <i class="bi bi-caret-up-fill" id="arrow-up-notification-menu"></i>
+
+    <div class="notifications">
+        <i class="bi bi-twitter twitter-notification-top-menu" ></i>
+        <span class="notification-top-menu-text">New notification!</span>
+    </div>
+    <div class="notifications">
+        <i class="bi bi-twitter twitter-notification-top-menu"></i>
+        <span class="notification-top-menu-text">New notification!</span>
+
+    </div>
+    <div class="notifications">
+        <i class="bi bi-twitter twitter-notification-top-menu"></i>
+        <span class="notification-top-menu-text">New notification!</span>
+
+    </div>
+    <div class="notifications">
+        <i class="bi bi-twitter twitter-notification-top-menu"></i>
+        <span class="notification-top-menu-text">New notification!</span>
+
+    </div>
+</div>
+
+
 
 <script src="./js/charts.js"></script>
 <script src="./js/main.js"></script>

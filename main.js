@@ -116,3 +116,52 @@ function restoreTasksFromLocalStorage() {
 }
 
 restoreTasksFromLocalStorage();
+
+///////////////////////////////////////////////
+
+const personalSettings = $(".personal-settings");
+const personalSettingsShow = $(".bi-chevron-down")
+const personalSettingsHide = $(".bi-chevron-up"
+)
+personalSettingsHide.hide();
+personalSettings.hide();
+
+personalSettingsShow.click(function (){
+    personalSettings.show(400);
+    personalSettingsShow.hide();
+    personalSettingsHide.show();
+});
+
+personalSettingsHide.click(function (){
+    personalSettings.hide(400);
+    personalSettingsShow.show();
+    personalSettingsHide.hide();
+});
+
+const mailMenu = $(".mail-menu");
+const mailMenuIcon = $(".bi-envelope-fill")
+mailMenu.hide();
+
+mailMenuIcon.click(function (){
+    mailMenu.show();
+});
+$(document).click(function (event) {
+    if (!$(event.target).closest(mailMenu).length && !$(event.target).is(mailMenuIcon)) {
+        mailMenu.hide();
+    }
+});
+
+
+const notificationMenu = $(".notification-menu");
+const notificationMenuIcon = $(".bi-bell-fill");
+notificationMenu.hide()
+
+notificationMenuIcon.click(function (){
+    notificationMenu.show();
+});
+
+$(document).click(function (event) {
+    if (!$(event.target).closest(notificationMenu).length && !$(event.target).is(notificationMenuIcon)) {
+        notificationMenu.hide();
+    }
+});

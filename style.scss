@@ -127,7 +127,7 @@ body{
 }
 #env-top-menu
 {
-  @include adaptiv-value("font-size", 25, 21);
+  @include adaptiv-value("font-size", 28, 24);
 }
 
 #env-top-menu:hover
@@ -139,15 +139,15 @@ body{
   position: absolute;
   top: 0;
   right:-4px;
-  @include adaptiv-value("width", 13, 11);
-  @include adaptiv-value("height", 13, 11);
+  @include adaptiv-value("width", 15, 13);
+  @include adaptiv-value("height", 15, 13);
   background-color:#f6bb42;
   color: white;
   border-radius: 50%;
   padding:0;
-  @include adaptiv-value("font-size", 13, 11);
+  @include adaptiv-value("font-size", 15, 13);
   text-align: center;
-  @include adaptiv-value("line-height", 13, 11);
+  @include adaptiv-value("line-height", 15, 13);
 }
 
 .top-menu-avatar {
@@ -173,11 +173,11 @@ body{
   @include adaptiv-value("font-size", 40, 33);
 }
 
-.bi-chevron-down
+.bi-chevron-down, .bi-chevron-up
 {
   font-size: 18px;
 }
-.bi-chevron-down:hover
+.bi-chevron-down:hover, .bi-chevron-up:hover
 {
   font-size: 20px;
 }
@@ -503,20 +503,29 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
 
     .sales-graph
     {
+
       background: #8bc152;
       color: #fafcf7;
-      @include adaptiv-value("font-size",20 ,18 );
       width: 100%;
       height: 42%;
-      @include adaptiv-value("padding",10 ,12 );
+      @include adaptiv-value("padding",5 ,12 );
+      display: flex;
+      flex-direction: column;
+      position: relative;
 
+      .sales-graph-header
+      {
+        @include adaptiv-value("font-size",20 ,18 );
+        height: 20%;
+      }
 
-
-      p {
-        margin: 0;
-      };
-
+      .sales-graph-body
+      {
+        @include adaptiv-value("height",165 ,110 );
+      }
     }
+
+
     .yearly-numbers
     {
       width: 100%;
@@ -1292,3 +1301,167 @@ i.bi-speedometer2,.bi-diagram-3-fill,.bi-text-left,.bi-chat-left-fill,#setting-m
   }
 }
 
+.personal-settings
+{
+  position: absolute;
+  top:75px;
+  @include adaptiv-value("left",1360 ,800 );
+  @include adaptiv-value("width",200 ,200 );
+  height: 250px;
+  background: #1f232c;
+  border-radius: 5px;
+
+.personal-settings-body
+{
+  padding: 9px;
+}
+  #arrow-up-person-menu
+  {
+    color: #1f232c;
+    position: absolute;
+    font-size: 30px;
+    top: -25px;
+    left: 160px;
+  }
+  .personal-settings-item
+  {
+    margin-top: 17px;
+    @include adaptiv-value("width",180 ,180 );
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 5px;
+
+    i
+    {
+      color:#a3aab4;
+      @include adaptiv-value("font-size", 23, 23);
+    }
+
+    .person-menu-name
+    {
+      @include adaptiv-value("padding-left", 60, 40);
+      position: absolute;
+      color: #f4f4f5;
+      text-decoration: none;
+      font-weight:400;
+      @include adaptiv-value("font-size", 17, 15);
+      @include adaptiv-value("padding-top", 7, 4);
+    }
+  }
+.personal-settings-item:hover
+{
+  background:#31343d;
+}
+}
+
+.mail-menu
+{
+  @include adaptiv-value("width", 400, 350);
+  @include adaptiv-value("height", 70, 50);
+  background: #1f232c;
+  border-radius: 10px;
+  position: absolute;
+  top:70px;
+  @include adaptiv-value("left", 940, 610);
+  display: flex;
+  flex-direction: column;
+
+  #arrow-up-mail-menu
+  {
+    color:#1f232c;
+    position: absolute;
+    top:-24px;
+    left: 58px;
+    font-size: 25px;
+  }
+
+  .mails
+  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    .bi-person-circle
+    {
+      color: #8bc152;
+      padding-left: 10px;
+    }
+
+    .sender
+    {
+      padding-left: 10px;
+      font-weight: 500;
+      color: #f4f4f5;
+      @include adaptiv-value("font-size", 17, 15);
+
+    }
+
+    .mail-text
+    {
+      padding-left: 20px;
+      color: #66b7f0;
+      @include adaptiv-value("font-size", 16, 15);
+
+    }
+
+    .time
+    {
+      color: aqua;
+      @include adaptiv-value("font-size", 15, 14);
+      @include adaptiv-value("padding-left", 50, 35);
+      padding-right: 8px;
+    }
+  }
+}
+
+.notification-menu
+{
+  @include adaptiv-value("width", 400, 350);
+  @include adaptiv-value("height", 250, 250);
+  background: #1f232c;
+  border-radius: 10px;
+  position: absolute;
+  top:70px;
+  @include adaptiv-value("left", 760, 448);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+
+  #arrow-up-notification-menu
+  {
+    color:#1f232c;
+    position: absolute;
+    top:-24px;
+    left: 182px;
+    font-size: 25px;
+  }
+
+  .notifications
+  {
+
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background: #66b7f0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .notification-top-menu-text
+    {
+      color: #ffffff;
+      margin-left: 40px;
+      font-size: 20px;
+    }
+
+    .twitter-notification-top-menu
+    {
+      font-size: 30px;
+      color: #f4f4f5;
+    }
+  }
+
+}
