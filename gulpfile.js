@@ -7,8 +7,6 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
-const chartJs = require('chart.js');
-
 
 function css_style() {
     return gulp.src('./app/sass/*.scss')
@@ -22,12 +20,12 @@ function css_style() {
         }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./app/css/'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 }
 
 function jsTask() {
-    return gulp.src('src/js/*.js')
+    return gulp.src('app/js/*.js')
         .pipe(concat('bundle.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
@@ -35,16 +33,27 @@ function jsTask() {
 }
 
 function compressImages() {
-    return gulp.src('./app/css/img/*')
+    return gulp.src('app/img/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('./dist/img'));
+        .pipe(gulp.dest('dist/img'));
 }
 
+function copyHTML() {
+    return gulp.src('app/*.html')
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
+}
+
+function copyScripts() {
+    return gulp.src(['app/js/charts.js', 'app/js/main.js', 'app/js/jquery-3.7.1.min.js'])
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.stream());
+}
 
 function sync(done) {
     browserSync.init({
         server: {
-            baseDir: './app'
+            baseDir: './dist'
         },
         port: 3000
     });
@@ -53,14 +62,12 @@ function sync(done) {
 
 function watchSass() {
     gulp.watch('./app/sass/**/*.scss', css_style);
-    gulp.watch('./app/*.html').on('change', browserSync.reload);
-    gulp.watch('./app/js/*.js').on('change', browserSync.reload);
+    gulp.watch('./app/*.html', copyHTML);
+    gulp.watch('./app/js/*.js', jsTask);
 }
 
 function defaultTask() {
-    gulp.parallel(css_style, sync, watchSass)();
-    gulp.watch('src/js/*.js', jsTask);
-    gulp.series(compressImages)
+    gulp.parallel(css_style, jsTask, compressImages, copyHTML, copyScripts, sync, watchSass)();
 }
 
 exports.default = defaultTask;
